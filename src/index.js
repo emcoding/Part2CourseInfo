@@ -59,11 +59,9 @@ const App = () => {
 
   // console.log(course)
   return (
-    <>
-      <Header title = {course.title} />
-      <Content parts = {course.parts} />
-      <Total parts = {course.parts} />
-    </>
+    <div>
+      <Course course={course} />
+    </div>
   )
 }
 
