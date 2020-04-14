@@ -3,15 +3,15 @@ import React from 'react'
 const Course = ({course}) => {
   // console.log("I'm in the Course component!", course)
   return (
-    <>
+    <div>
       <Header title={course.name} />
       <Content parts={course.parts}/>
       <Total parts = {course.parts} />
-    </>
+    </div>
     )
 }
 
-const Header = ({title}) => (<h1>{title}</h1>)
+const Header = ({title}) => (<h3>{title}</h3>)
 
 const Content = ({parts}) => {
   return (
