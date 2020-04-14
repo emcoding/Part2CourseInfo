@@ -1,12 +1,12 @@
 import React from 'react'
 
 const Course = ({course}) => {
-  console.log("I'm in the comp!", course)
+  // console.log("I'm in the Course component!", course)
   return (
     <>
       <Header title={course.name} />
       <Content parts={course.parts}/>
-      {/* <Total parts = {course.parts} /> */}
+      <Total parts = {course.parts} />
     </>
     )
 }
@@ -25,19 +25,15 @@ const Content = ({parts}) => {
   )      
 }
 
-const Part = ({title, exerciseCount}) => {
-  return (
-  <p>{title}: {exerciseCount} exercises</p>
+const Part = ({title, exerciseCount}) => ( <p>{title}: {exerciseCount} exercises</p>)
+
+const Total = ({parts}) => {
+  const exerciseNumbers = parts.map(part => part.exercises) ;
+  const sum = exerciseNumbers.reduce((count, number) => count + number, 0);
+  
+  return  (
+  <p><em>The total number of exercises is {sum} </em></p>
   )
 }
-
-//////////////////////
-
-// const Total = props => {
-//   // console.log(props.parts)
-//   return  (
-//   <p><em>Total number of exercises is {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises} </em></p>
-//   )
-// }
 
 export default Course
