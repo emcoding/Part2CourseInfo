@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Course = ({course}) => {
-  // console.log("I'm in the Course component!", course)
   return (
     <div>
       <Header title={course.name} />
